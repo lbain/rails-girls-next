@@ -7,6 +7,7 @@ We'll be writing a function to handle withdrawing money from an ATM. It will acc
 This tutorial consists of 4 steps, and 2 challenge steps. We'll start simple, then add more challenging requirements with each step.
 
 ### Workflow
+
 Each step has pre-built tests, which you can use to verify your code works as expected. For each step, you'll take the following actions:
 
 a) Copy the tests for that step into your code, replacing the tests from the previous step.
@@ -64,9 +65,9 @@ describe 'atm' do
 end
 ```
 
-** Tips for this step**
+#### Tips for this step
 
-The modulus operator, `%` gets the remainder of a division. So, `5 % 2 == 1` is true (five divided by two has a remainder of 1)
+The modulus operator, `%` gets the remainder of a division. So, `5 % 2` results in 1 (because the remainder of five divided by two is 1)
 
 `[]` defines an empty array. `[10, 20]` defines an array with two elements (10 and 20)
 
@@ -80,8 +81,9 @@ Bringing it all together:
 my_array = [] # create an empty array and store it in my_array
 my_array << 20 # now my array contains [20]
 my_array << 30 # now my_array contains [20, 30]
-remainder = 13 % 5 # remainder is 2
-remainder.times { my_array << 5 } # now my_array contains [20, 30, 5, 5, 5]
+2.times { my_array << 4 } # now my_array contains [20, 30, 4, 4]
+remainder = 13 % 5 # remainder is 3
+remainder.times { my_array << 5 } # now my_array contains [20, 30, 4, 4, 5, 5, 5]
 ```
 
 ### Step 2
@@ -112,7 +114,7 @@ end
 
 ### Step 1/2 Discussion Points
 * How many lines did you have to change? What if we now restricted it to another single denomination (eg. $20 notes)? How many lines would you have to change this time?
-* Refactor your code so such that you could switch to only $20 notes, by changing a single line
+* Refactor your code such that you could switch to only $20 notes, by changing a single line
 * Did you initially use magic numbers?
 * Why are magic numbers bad?
 * What is the most future-proof solution? Why?
@@ -140,7 +142,7 @@ describe 'atm' do
 end
 ```
 
-** Tips for this step**
+#### Tips for this step
 
 The `floor` method rounds a number down to the nearest whole integer.
 
@@ -180,7 +182,7 @@ describe 'atm' do
 end
 ```
 
-** Tips for this step**
+#### Tips for this step
 
 To tell if an array is empty: `my_array.empty?`
 
