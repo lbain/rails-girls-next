@@ -24,6 +24,23 @@ d) Move on to the next step and repeat.
 
 **Using console:** `cd /path/to/directory/` and then run `ruby atm.rb` *(assuming your file is called atm.rb)*
 
+## Step 0
+Decide between the two of you who will drive first. They will be the owner of this repository (but don't worry, you'll both have a copy of it at the end!).
+
+We're going to get set up to use git properly for the rest of this guide.
+
+On GitHub [create a new repository](https://help.github.com/articles/creating-a-new-repository) with the name `atm-problem`.
+
+On your computer open terminal or command line and move to your programming directory. (This is a great time to create one if you don't have it already! It helps keep all your programming bits and pieces together.)
+
+* `cd directory-name` will move you to that directory
+* `pwd` stands for Print Working Directory and will show you which directory you are currently in
+* Pro-tip: on macs you can type `cd ` and then drag and drop your folder from finder to the termial
+
+Once you've navigated to your directory run the command `git clone git@github.com:[your_username_here]/atm-problem.git`
+
+Move into your new `atm-problem` directory.
+
 ## Step 1
 
 Imagine an ATM that holds only $5 notes. Write a function to return an array of $5 notes, for a given amount.
@@ -56,7 +73,7 @@ remainder.times { my_array << 5 } # now my_array contains [20, 30, 4, 4, 5, 5, 5
 ```
 
 #### Starting Code & Tests
-Create a file called `atm.rb` and paste the following code into it. This contains the shell of your `withdraw()` function, along with tests. Your task is to modify the code so all tests pass.
+In your `atm-problem` directory create a file called `atm.rb` and paste the following code into it. This contains the shell of your `withdraw()` function, along with tests. Your task is to modify the code so all tests pass.
 
 ```ruby
 def withdraw(amount)
@@ -94,7 +111,27 @@ describe 'atm' do
 end
 ```
 
+#### Git
+Once all your tests pass you need to commit your changes and push them up to the repo on GitHub. In the terminal, from within your `atm-problem`, run the follow commands:
+
+1. Tell git about your changes: `git add -A`
+2. Commit those changes: `git commit -m "write your message here"`
+3. Push your code up to GitHub: `git push origin master`
+
+Now you can see your code at [https://github.com/[your_username_here]/atm-problem]().
+
 ## Step 2
+
+#### Git
+The repo owner needs to give the other person [access to the repo](https://help.github.com/articles/how-do-i-add-a-collaborator).
+
+Whoever wasn't driving before (the "observer") will now drive.
+
+On your computer open terminal or command line and move to your programming directory. Once there clone the repo and move into your new `atm-problem` directory.
+
+Now you can continue working on the problem on your computer.
+
+### Problem
 Now imagine the ATM returns only $10 notes. Modify your function to accommodate this.
 
 #### Examples
@@ -122,6 +159,9 @@ describe 'atm' do
 end
 ```
 
+### Git
+Again, add and commit your changes, then push them up to the repo.
+
 ### Discussion points
 Talk about these questions with your partner. If you have any additional questions ask a coach.
 
@@ -132,6 +172,15 @@ Talk about these questions with your partner. If you have any additional questio
 * What is the most future-proof solution? Why?
 
 ## Step 3
+
+### Git
+Switch driver and observer and move back to the driver's computer.
+
+Update your code by running `git pull origin master` from within your `atm-problem` directory. You should now have everything that was done in step 2.
+
+From now on we won't walk you through the git changes for each step. But you should continue to add and commit your changes, push those changes to the git repo, and pull them down on the other computer for every step.
+
+## Problem
 Imagine your ATM now holds $5 and $10. People want as few notes as possible.
 
 #### Examples
@@ -289,3 +338,6 @@ end
 * Can you think of any take-home best practices or principals? Is code structure important? Why?
 * Did you have any 'Aha!' moments? What were they?
 * Lets say you started a little ATM company, which quickly expanded to become a global success. How suitable is your code for dealing with all denominations of currency, in all nations of the world? Did it get more suitable with each step?
+
+## Final Git
+Once you're done with the problem (or done enough!) whoever doesn't own the repo can fork it so they have access to the code on GitHub. Just do [step 1](https://help.github.com/articles/fork-a-repo), and you'll have the repo listed under your name too.
