@@ -41,7 +41,7 @@ Once you've navigated to your directory run the command `git clone git@github.co
 
 Move into your new `atm-problem` directory.
 
-## Step 1
+## Step 1 - Beginner
 
 Imagine an ATM that holds only $5 notes. Write a function to return an array of $5 notes, for a given amount.
 
@@ -120,7 +120,7 @@ Once all your tests pass you need to commit your changes and push them up to the
 
 Now you can see your code at [https://github.com/[your_username_here]/atm-problem]().
 
-## Step 2
+## Step 2 - Beginner
 
 #### Git
 The repo owner needs to give the other person [access to the repo](https://help.github.com/articles/how-do-i-add-a-collaborator).
@@ -171,7 +171,7 @@ Talk about these questions with your partner. If you have any additional questio
 * Why are magic numbers bad?
 * What is the most future-proof solution? Why?
 
-## Step 3
+## Step 3 - Intermediate
 
 ### Git
 Switch driver and observer and move back to the driver's computer.
@@ -221,7 +221,7 @@ describe 'atm' do
 end
 ```
 
-## Step 4
+## Step 4 - Intermediate
 Imagine your ATM now holds $20, $10 and $5 notes. Modify your function to accommodate this. (If your function gets long, feel free to break it up into multiple functions).
 
 *Note that at this point, each higher denomination can be evenly divided by each lower denomination - eg. $20 / $10 = 2. Things get much trickier when that's not the case (eg, $50 and $20). For this step, we'll intentionally not deal with this case to make it easier.*
@@ -264,7 +264,7 @@ end
 * Refactor your code so that you could change to $100, $20 and $10 notes by changing a single line.
 * What is the most future-proof solution?
 
-## Step 5a - Extra Challenge
+## Step 5a - Advanced
 Let's tackle the tricker case we mentioned, where each note isn't necessarily a multiple of the next lowest note. For this step, we'll assume we have only $50 and $20 notes available - but we'll be mixing it up more later, so try to keep your code future-proof!
 
 **Hint:** Before writing any code, consider withdrawing the following amounts: $60, $80, $110, $160 - what should it return? What process does it need to go through to arrive at that result? What will your existing code try to do? Consider writing a brief solution in pseudo-code, first.
@@ -297,11 +297,11 @@ describe 'atm' do
 end
 ```
 
-## Step 5b - Extra Challenge
+## Step 5b - Advanced
 * Read, but don't do, step 6. If you're step 5 code is great, it should only take a few seconds to complete step 6. Can you see why?
 * Refactor your step 5 code, to make it as future-ready as possible for step 6.
 
-## Step 6 - Extra Challenge
+## Step 6 - Advanced
 Imagine you're now able to pass in a second parameter (an array), specifying the denominations of (Australian) notes available for that withdrawal. Assume people prefer to get the highest possible denomination of note.
 
 #### Examples
