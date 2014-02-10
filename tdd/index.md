@@ -444,5 +444,4 @@ end
     still worked?
   - How would you feel confident that it works without the tests? Would you
     manually test it somehow?
-  - Would you enjoy working in this TDD way every day?
-
+  - What would you do differently, if you did TDD again?
