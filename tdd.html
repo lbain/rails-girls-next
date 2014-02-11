@@ -1,0 +1,61 @@
+<h1>TDD Exercise</h1>
+<p>This exercise was run for me by a great guy named Steve Hardisty when we both
+worked at REA Pty Ltd. It is intended as an exercise to teach you what we&#39;re
+talking about when we say Test Driven Development. It also involves pair (or in
+our case group) programming.</p>
+<h2>Overview</h2>
+<p> You will be writing a Roman Numeral converter using test driven development (TDD). The converter will take a Roman Numeral (i.e. "I", "IV", or "XX") and convert it into a number (i.e. 1, 4, 200).</p>
+<ul>
+<li>How Roman numerals work: <a href="[reference]"><a href="http://www.onlineconversion.com/roman_numerals_advanced.htm">http://www.onlineconversion.com/roman_numerals_advanced.htm</a></a></li>
+<li>Split into <strong>groups of 3</strong>, each with a computer.</li>
+<li>Each group will have a <strong>hot seat</strong> with laptop, keyboard and Sublime Text.</li>
+<li>A mentor will provide the <strong>initial code</strong> (below).</li>
+<li>Within each group, everybody <strong>rotates chairs</strong> so the next person is at the keyboard, each time:<ul>
+<li>A new test is written, or</li>
+<li>A test goes from failing to passing.</li>
+</ul>
+</li>
+</ul>
+<h2>0. Initial Code</h2>
+<p>The mentor types this out:</p>
+<pre><code class="lang-ruby">def roman(n)
+  return &quot;?&quot;
+end
+
+require &quot;minitest/spec&quot;
+require &quot;minitest/autorun&quot;
+require &quot;minitest/pride&quot;
+
+describe &quot;roman&quot; do
+  it &quot;converts the number 1 to the string I&quot; do
+    roman(1).must_equal &quot;I&quot;
+  end
+end</code></pre>
+<p>Run the test using Ctrl-B in Sublime Text or
+typing the following at the prompt:</p>
+<pre><code>ruby roman.rb</code></pre>
+<p>Outputs:</p>
+<pre><code class="lang-plain">roman#test_0001_converts the number 1 to the string I [tdd1.rb:11]:
+Expected: &quot;I&quot;
+  Actual: &quot;?&quot;
+
+1 tests, 1 assertions, 1 failures, 0 errors, 0 skips</code></pre>
+<p>Your code is now <b>red</b> - one or more of the tests fail.</p>
+
+<h2>1. Write code</h2>
+<p>
+  Everybody changes seats (it's like musical chairs!). A new person (not the mentor) is now at the keyboard, they try to make this test pass. They may do this however they see
+fit, with feedback and hints from the other group members. It's fine if the change is just an extra if statement. In fact, that&#39;s encouraged, to put the
+pressure on the person writing the test to try harder to break it.</p>
+<p> Your code is now <b>green</b> all of your tests pass. Commit your code at this point:</p>
+<pre><code>$ git commit -m "your commit message here"</code></pre>
+<p>And push your code up to github:</p>
+<pre><code>$ git push origin master</code></pre>
+
+<h2>2. Write test</h2>
+<p> Once you have your tests passing (again, it doesn't matter how "good" the code is), everybody changes seats again. The new "driver" (person writing the code), should write another test. You can write any test you like, so long as it moves you towards the goal of converting Roman Numerals. In general your tests will have a logical progression, but you'll find you might need to go back and add tests, that's completely fine! Again, the other group members ("ovservers") should give suggestions and hints (but they should NOT take over the keyboard, they're observing!)</p>
+<p> Your code is now <b>red</b> again.</p>
+
+<h2>3. Rinse and Repeat!</h2>
+<p> Now you have the idea, you can keep repeating steps 1 and 2, making sure to continue switching the driver each time.</p>
+<p> Whenever you feel like some of the code needs to be refactored (cleaned up and made easier to read), stop and work through the refactor. You should only refactor when your code is <b>green</b>, you should work through the refactor as a group, and your code should be green by the end of the refactor. Make sure you commit after a refactor.</p>
