@@ -42,17 +42,7 @@
 <p><strong>Using Sublime Text:</strong> With your solution open, Press command-B (Or select Tools -&gt; Build)</p>
 <p><strong>Using console:</strong> <code>cd /path/to/directory/</code> and then run <code>ruby atm.rb</code> <em>(assuming your file is called atm.rb)</em></p>
 <h2>Step 0</h2>
-<p>Decide between the two of you who will drive first. They will be the owner of this repository (but don&#39;t worry, you&#39;ll both have a copy of it at the end!).</p>
-<p>We&#39;re going to get set up to use git properly for the rest of this guide.</p>
-<p>On GitHub <a href="https://help.github.com/articles/creating-a-new-repository">create a new repository</a> with the name <code>atm-problem</code>.</p>
-<p>On your computer open terminal or command line and move to your programming directory. (This is a great time to create one if you don&#39;t have it already! It helps keep all your programming bits and pieces together.)</p>
-<ul>
-<li><code>cd directory-name</code> will move you to that directory</li>
-<li><code>pwd</code> stands for Print Working Directory and will show you which directory you are currently in</li>
-<li>Pro-tip: on macs you can type <code>cd</code> and then drag and drop your folder from finder to the termial</li>
-</ul>
-<p>Once you&#39;ve navigated to your directory run the command <code>git clone git@github.com:[your_username_here]/atm-problem.git</code></p>
-<p>Move into your new <code>atm-problem</code> directory.</p>
+<p><a href="/rails-girls-next/git#create">Create</a> your GitHub repo.</p>
 <h2>Step 1 - Beginner</h2>
 <p>Imagine an ATM that holds only $5 notes. Write a function to return an array of $5 notes, for a given amount.</p>
 <h4>Examples</h4>
@@ -105,20 +95,10 @@ describe &#39;atm&#39; do
     end
   end
 end</code></pre>
-<h4>Git</h4>
-<p>Once all your tests pass you need to commit your changes and push them up to the repo on GitHub. In the terminal, from within your <code>atm-problem</code>, run the follow commands:</p>
-<ol>
-<li>Tell git about your changes: <code>git add -A</code></li>
-<li>Commit those changes: <code>git commit -m &quot;write your message here&quot;</code></li>
-<li>Push your code up to GitHub: <code>git push origin master</code></li>
-</ol>
-<p>Now you can see your code at <a href=""><a href="https://github.com/[your_username_here]/atm-problem">https://github.com/[your_username_here]/atm-problem</a></a>.</p>
+<p><a href="/rails-girls-next/git#commit">Commit</a> your changes, and <a href="/rails-girls-next/git#push">push</a> them up to the repo. You should commit and push after each step.</p>
 <h2>Step 2 - Beginner</h2>
-<h4>Git</h4>
-<p>The repo owner needs to give the other person <a href="https://help.github.com/articles/how-do-i-add-a-collaborator">access to the repo</a>.</p>
-<p>Whoever wasn&#39;t driving before (the &quot;observer&quot;) will now drive.</p>
-<p>On your computer open terminal or command line and move to your programming directory. Once there clone the repo and move into your new <code>atm-problem</code> directory.</p>
-<p>Now you can continue working on the problem on your computer.</p>
+<p><a href="/rails-girls-next/git#share">Share</a> access to the git repo. Switch driver and observer and move back to the driver&#39;s computer. You should switch rolls before each step.</p>
+
 <h3>Problem</h3>
 <p>Now imagine the ATM returns only $10 notes. Modify your function to accommodate this.</p>
 <h4>Examples</h4>
@@ -140,8 +120,7 @@ end</code></pre>
     end
   end
 end</code></pre>
-<h3>Git</h3>
-<p>Again, add and commit your changes, then push them up to the repo.</p>
+<p>Again, make sure you <a href="/rails-girls-next/git#commit">commit</a> and <a href="/rails-girls-next/git#push">push</a> your changes.</p>
 <h3>Discussion points</h3>
 <p>Talk about these questions with your partner. If you have any additional questions ask a coach.</p>
 <ul>
@@ -152,10 +131,8 @@ end</code></pre>
 <li>What is the most future-proof solution? Why?</li>
 </ul>
 <h2>Step 3 - Intermediate</h2>
-<h3>Git</h3>
-<p>Switch driver and observer and move back to the driver&#39;s computer.</p>
-<p>Update your code by running <code>git pull origin master</code> from within your <code>atm-problem</code> directory. You should now have everything that was done in step 2.</p>
-<p>From now on we won&#39;t walk you through the git changes for each step. But you should continue to add and commit your changes, push those changes to the git repo, and pull them down on the other computer for every step.</p>
+<p>Swtich driver and observer. <a href="/rails-girls-next/git#pull">Pull</a> the code from the repo to make sure you have all the changes made in the previous step. You should <code>pull</code> before each step.</p>
+<p>From now on we won&#39;t walk you through the git changes for each step. But you should continue to <a href="/rails-girls-next/git#commit">commit</a> your changes, <a href="/rails-girls-next/git#push">push</a> those changes to the git repo, and <a href="/rails-girls-next/git#pull">pull</a> them down on the other computer for every step.</p>
 <h2>Problem</h2>
 <p>Imagine your ATM now holds $5 and $10. People want as few notes as possible.</p>
 <h4>Examples</h4>
@@ -280,7 +257,7 @@ end</code></pre>
 <li>Lets say you started a little ATM company, which quickly expanded to become a global success. How suitable is your code for dealing with all denominations of currency, in all nations of the world? Did it get more suitable with each step?</li>
 </ul>
 <h2>Final Git</h2>
-<p>Once you&#39;re done with the problem (or done enough!) whoever doesn&#39;t own the repo can fork it so they have access to the code on GitHub. Just do <a href="https://help.github.com/articles/fork-a-repo">step 1</a>, and you&#39;ll have the repo listed under your name too.</p>
+<p> Don't forget to <a href="/rails-girls-next/git#fork">fork</a> the repo when you're done!</p>
 
       </section>
       <footer>
