@@ -2,8 +2,8 @@
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
+  font:18px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#333;
   font-weight:300;
 }
 
@@ -63,12 +63,26 @@ code, pre {
   font-size:12px;
 }
 
+code {
+  background: #f8f8f8;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+
 pre {
   padding:8px 15px;
-  background: #f8f8f8;  
+  background: #f8f8f8;
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
+}
+
+pre code {
+  border-radius: 0px;
+  border: none;
+  white-space: pre;
 }
 
 table {
@@ -103,6 +117,7 @@ header {
 
 header ul {
   padding:0;
+  font-size: 16px;
 }
 
 strong {
@@ -111,7 +126,7 @@ strong {
 }
 
 section {
-  width:500px;
+  width:600px;
   float:right;
   padding-bottom:50px;
 }
@@ -132,12 +147,13 @@ footer {
   float:left;
   position:fixed;
   bottom:50px;
+  font-size: 16px;
 }
 
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
-    width:auto;
+    width:960;
     margin:0;
   }
   
