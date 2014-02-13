@@ -115,6 +115,12 @@ header {
   position:fixed;
 }
 
+.logo {
+  width: 50px;
+  margin-left: 75px;
+  margin-bottom: 20px;
+}
+
 header ul {
   padding:0;
   font-size: 16px;
@@ -151,33 +157,33 @@ footer {
 }
 
 @media print, screen and (max-width: 960px) {
-  
+
   div.wrapper {
     width:960;
     margin:0;
   }
-  
+
   header, section, footer {
     float:none;
     position:static;
     width:auto;
   }
-  
+
   header {
     padding-right:320px;
   }
-  
+
   section {
     border:1px solid #e5e5e5;
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
   }
-  
+
   header a small {
     display:inline;
   }
-  
+
   header ul {
     position:absolute;
     right:50px;
@@ -189,15 +195,15 @@ footer {
   body {
     word-wrap:break-word;
   }
-  
+
   header {
     padding:0;
   }
-  
+
   header ul, header p.view {
     position:static;
   }
-  
+
   pre, code {
     word-wrap:normal;
   }
@@ -207,7 +213,7 @@ footer {
   body {
     padding:15px;
   }
-  
+
   header ul {
     display:none;
   }
