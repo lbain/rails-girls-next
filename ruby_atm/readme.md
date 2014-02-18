@@ -290,7 +290,7 @@ describe 'atm' do
     [160, [50, 50, 20, 20, 20]],
     [200, [50, 50, 50, 50]]
   ].each do |amount, expected|
-    it "should return #{expected} when $#{input} is withdrawn" do
+    it "should return #{expected} when $#{amount} is withdrawn" do
       withdraw(amount).must_equal expected
     end
   end
