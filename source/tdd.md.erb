@@ -1,0 +1,59 @@
+
+<h1>TDD Exercise</h1>
+<p><em>Created by Greg McIntyre, <a href="https://twitter.com/gregmcintyre">@gregmcintyre</a></em></p>
+<p>This exercise was run for me by a great guy named Steve Hardisty when we both
+worked at REA Pty Ltd. It is intended as an exercise to teach you what we&#39;re
+talking about when we say Test Driven Development (TDD). It also involves pair (or in
+our case group) programming.</p>
+<h2>Overview</h2>
+<p> You will be writing a Roman Numeral converter using TDD. The converter will take a Roman Numeral (i.e. "I", "IV", or "XX") and convert it into a number (i.e. 1, 4, 200). Here's a quick reminder on <a href="http://www.onlineconversion.com/roman_numerals_advanced.htm">how Roman numerals work</a>.</p>
+
+<h2>Step 0 - Git</h2>
+<p>Pick someone to <a href="/rails-girls-next/git#create">create</a> your GitHub repo. Then <a href="/rails-girls-next/git#share">share</a> access to the repo with everyone in the group.</p>
+
+<h2>Step 1 - Initial Code</h2>
+<p>A mentor will work with you for the first step:</p>
+<pre><code class="lang-ruby">def roman(n)
+  return &quot;?&quot;
+end
+
+require &quot;minitest/spec&quot;
+require &quot;minitest/autorun&quot;
+require &quot;minitest/pride&quot;
+
+describe &quot;roman&quot; do
+  it &quot;converts the number 1 to the string I&quot; do
+    roman(1).must_equal &quot;I&quot;
+  end
+end</code></pre>
+<p>Run the test using Ctrl-B in Sublime Text or
+typing the following at the prompt:</p>
+<pre><code>ruby roman.rb</code></pre>
+<p>Outputs:</p>
+<pre><code class="lang-plain">roman#test_0001_converts the number 1 to the string I [tdd1.rb:11]:
+Expected: &quot;I&quot;
+  Actual: &quot;?&quot;
+
+1 tests, 1 assertions, 1 failures, 0 errors, 0 skips</code></pre>
+<p>Your code is now <b>red</b> - one or more of the tests fail.  <a href="/rails-girls-next/git#commit">Commit</a> these changes, and <a href="/rails-girls-next/git#push">push</a> them up to the repo. You should commit and push after each step.</p>
+
+<h2>Step 2 - Write code</h2>
+<p>
+  Pick someone in your group to drive (you'll all do it, so don't be shy!). <a href="/rails-girls-next/git#pull">Pull</a> the code from the repo to make sure you have all the changes made in the previous step. You should pull before each step.
+</p>
+<p>
+  The new driver will try to make the test pass. They may do this however they see fit, with feedback and hints from the other group members. It's fine if the change is just an extra if statement. In fact, that&#39;s a great idea - it encourages the person writing the test to try harder to write good tests.</p>
+<p> Your code is now <b>green</b> - all of your tests pass. <a href="/rails-girls-next/git#commit">Commit</a> and <a href="/rails-girls-next/git#push">push</a> again.</p>
+
+<h2>Step 3 - Write test</h2>
+<p>The next person is now the driver, and the other two are observers. <a href="/rails-girls-next/git#pull">Pull</a> again.</p>
+
+<p> The new driver should write another test that will <b>fail</b>. You can write any test you like, so long as it moves you towards the goal of converting Roman Numerals. In general your tests will have a logical progression, but you'll find you might need to go back and add tests - that's completely fine! The observers should continue to give suggestions and hints. (But they should NOT take over the keyboard, they're observing!)</p>
+<p> Your code is now <b>red</b> again, time to <a href="/rails-girls-next/git#commit">commit</a> and <a href="/rails-girls-next/git#push">push</a>.</p>
+
+<h2>Step 4 - Rinse and Repeat!</h2>
+<p> Now you have the idea, you can keep repeating steps 2 and 3, making sure to continue switching the driver each time.</p>
+<p> Whenever you feel like some of the code needs to be refactored (cleaned up and made easier to read), stop and work through the refactor. You should only refactor when your code is <b>green</b>, you should work through the refactor as a group, and your code should be green by the end of the refactor. Make sure you commit after a refactor.</p>
+
+<h2>Final Git</h2>
+<p> Don't forget to <a href="/rails-girls-next/git#fork">fork</a> the repo when you're done!</p>

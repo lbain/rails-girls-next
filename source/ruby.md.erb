@@ -1,0 +1,231 @@
+
+<h1>Rails Girls Tutorial: Programming a Ruby ATM</h1>
+<p><em>Created by Joshua Paling, <a href="https://twitter.com/joshuapaling">@joshuapaling</a></em></p>
+<p>We&#39;ll be writing a function to handle withdrawing money from an ATM. It will accept an amount, and return either an <code>array</code> representing the notes to return, or <code>false</code> if that amount cannot be made up of the available notes.</p>
+<p>This tutorial consists of 4 steps, and 2 additional challenge steps. We&#39;ll start simple, then add more challenging requirements with each step.</p>
+<h3>Workflow</h3>
+<p>Each step has pre-built tests, which you can use to verify your code works as expected. For each step, you&#39;ll take the following actions:</p>
+<p>a) Copy the tests for that step into your code, replacing the tests from the previous step.</p>
+<p>b) Modify your code, and re-run the tests, until all tests pass. <em>Note: some steps have tips - make sure to read those.</em></p>
+<p>c) If there are discussion points, spend a few minutes talking about them with your pairing partner.</p>
+<p>d) Move on to the next step and repeat.</p>
+<h3>To run the tests</h3>
+<p><strong>Using Sublime Text:</strong> With your solution open, Press command-B (Or select Tools -&gt; Build)</p>
+<p><strong>Using console:</strong> <code>cd /path/to/directory/</code> and then run <code>ruby atm.rb</code> <em>(assuming your file is called atm.rb)</em></p>
+<h2>Step 0</h2>
+<p><a href="/rails-girls-next/git#create">Create</a> your GitHub repo.</p>
+<h2>Step 1 - Beginner</h2>
+<p>Imagine an ATM that holds only $5 notes. Write a function to return an array of $5 notes, for a given amount.</p>
+<h4>Examples</h4>
+<p><code>withdraw(15)</code> should return an array, <code>[5, 5, 5]</code></p>
+<p><code>withdraw(18)</code> should return <code>false</code>, because $18 cannot be made up of $5 notes</p>
+<h4>Tips for this step</h4>
+<p>The modulus operator, <code>%</code> gets the remainder of a division. So, <code>5 % 2</code> results in <code>1</code> (because the remainder of five divided by two is 1)</p>
+<p><code>[]</code> defines an empty array. <code>[10, 20]</code> defines an array with two elements (10 and 20)</p>
+<p><code>&lt;&lt;</code> the shovel operator adds an element to an array. Eg. <code>[10, 20] &lt;&lt; 30</code> will add 30 to the array, resulting in <code>[10, 20, 30]</code></p>
+<p>the <code>times</code> method executes a block of code several times - eg. <code>5.times { puts &#39;hello&#39; }</code> will print &#39;hello&#39; 5 times.</p>
+<p>Bringing it all together:</p>
+<pre><code class="lang-ruby">my_array = [] # create an empty array and store it in my_array
+my_array &lt;&lt; 20 # now my array contains [20]
+my_array &lt;&lt; 30 # now my_array contains [20, 30]
+2.times { my_array &lt;&lt; 4 } # now my_array contains [20, 30, 4, 4]
+remainder = 13 % 5 # remainder is 3
+remainder.times { my_array &lt;&lt; 5 } # now my_array contains [20, 30, 4, 4, 5, 5, 5]</code></pre>
+<h4>Starting Code &amp; Tests</h4>
+<p>In your <code>atm-problem</code> directory create a file called <code>atm.rb</code> and paste the following code into it. This contains the shell of your <code>withdraw()</code> function, along with tests. Your task is to modify the code so all tests pass.</p>
+<pre><code class="lang-ruby">def withdraw(amount)
+  if amount &lt;= 0 # this deals with some of the situations...
+    return false
+  end
+  ##################################################
+  #
+  #             Your code goes here
+  #
+  ##################################################
+  return []
+end
+
+# import required testing libraries
+require &#39;minitest/spec&#39;
+require &#39;minitest/autorun&#39;
+
+# Below are the tests for automatically checking your solution.
+# You need to replace these tests after each step.
+
+describe &#39;atm&#39; do
+  [
+    [-1, false],
+    [0, false],
+    [1, false],
+    [43, false],
+    [20, [5, 5, 5, 5]],
+    [35, [5, 5, 5, 5, 5, 5, 5]],
+  ].each do |input, expected|
+    it &quot;should return #{expected} when $#{input} is withdrawn&quot; do
+      withdraw(input).must_equal expected
+    end
+  end
+end</code></pre>
+<p><a href="/rails-girls-next/git#commit">Commit</a> your changes, and <a href="/rails-girls-next/git#push">push</a> them up to the repo. You should commit and push after each step.</p>
+<h2>Step 2 - Beginner</h2>
+<p><a href="/rails-girls-next/git#share">Share</a> access to the git repo. Switch driver and observer and move back to the driver&#39;s computer. You should switch rolls before each step.</p>
+
+<h3>Problem</h3>
+<p>Now imagine the ATM returns only $10 notes. Modify your function to accommodate this.</p>
+<h4>Examples</h4>
+<p><code>withdraw(20)</code> should return an array, <code>[10, 10]</code></p>
+<p><code>withdraw(15)</code> should return <code>false</code>, because $15 cannot be made up of $10 notes</p>
+<h4>Tests</h4>
+<p>Replace the tests from the previous step with the tests below, and modify your code until these new tests pass.</p>
+<pre><code class="lang-ruby">describe &#39;atm&#39; do
+  [
+    [-1, false],
+    [0, false],
+    [7, false],
+    [45, false],
+    [20, [10, 10]],
+    [40, [10, 10, 10, 10]],
+  ].each do |input, expected|
+    it &quot;should return #{expected} when $#{input} is withdrawn&quot; do
+      withdraw(input).must_equal expected
+    end
+  end
+end</code></pre>
+<p>Again, make sure you <a href="/rails-girls-next/git#commit">commit</a> and <a href="/rails-girls-next/git#push">push</a> your changes.</p>
+<h3>Discussion points</h3>
+<p>Talk about these questions with your partner. If you have any additional questions ask a coach.</p>
+<ul>
+<li>How many lines did you have to change? What if we now restricted it to another single denomination (eg. $20 notes)? How many lines would you have to change this time?</li>
+<li>Refactor your code such that you could switch to only $20 notes, by changing a single line</li>
+<li>Did you initially use <a href="http://en.wikipedia.org/wiki/Magic_number_(programming">magic numbers</a>)?</li>
+<li>Why are magic numbers bad?</li>
+<li>What is the most future-proof solution? Why?</li>
+</ul>
+<h2>Step 3 - Intermediate</h2>
+<p>Swtich driver and observer. <a href="/rails-girls-next/git#pull">Pull</a> the code from the repo to make sure you have all the changes made in the previous step. You should pull before each step.</p>
+<p>From now on we won&#39;t walk you through the git changes for each step. But you should continue to <a href="/rails-girls-next/git#commit">commit</a> your changes, <a href="/rails-girls-next/git#push">push</a> those changes to the git repo, and <a href="/rails-girls-next/git#pull">pull</a> them down on the other computer for every step.</p>
+<h2>Problem</h2>
+<p>Imagine your ATM now holds $5 and $10. People want as few notes as possible.</p>
+<h4>Examples</h4>
+<p><code>withdraw(25)</code> should return <code>[10, 10, 5]</code></p>
+<p><code>withdraw(30)</code> should return <code>[10, 10, 10]</code></p>
+<h4>Tips for this step</h4>
+<p>The <code>floor</code> method rounds a number down to the nearest whole integer.</p>
+<p>Example:</p>
+<pre><code class="lang-ruby">my_number = 3.87.floor # my_number contains 3
+
+my_number = (25/10).floor
+# my_number now contains 2, because 25/10 = 2.5, and floor will round that down to 2.</code></pre>
+<h4>Tests</h4>
+<p>Replace the tests from the previous step with the tests below, and modify your code until these new tests pass.</p>
+<pre><code class="lang-ruby">describe &#39;atm&#39; do
+  [
+    [-1, false],
+    [0, false],
+    [7, false],
+    [20, [10, 10]],
+    [25, [10, 10, 5]],
+    [35, [10, 10, 10, 5]],
+  ].each do |input, expected|
+    it &quot;should return #{expected} when $#{input} is withdrawn&quot; do
+      withdraw(input).must_equal expected
+    end
+  end
+end</code></pre>
+<h2>Step 4 - Intermediate</h2>
+<p>Imagine your ATM now holds $20, $10 and $5 notes. Modify your function to accommodate this. (If your function gets long, feel free to break it up into multiple functions).</p>
+<p><em>Note that at this point, each higher denomination can be evenly divided by each lower denomination - eg. $20 / $10 = 2. Things get much trickier when that&#39;s not the case (eg, $50 and $20). For this step, we&#39;ll intentionally not deal with this case to make it easier.</em></p>
+<h4>Tips for this step</h4>
+<p>To tell if an array is empty: <code>my_array.empty?</code></p>
+<p>To tell if an array is not empty: <code>!my_array.empty?</code></p>
+<p>To remove the first element off an array: <code>my_array.shift</code>. Eg, <code>[10, 20, 30].shift</code> results in <code>[20, 30]</code></p>
+<p>If your function calls a sub-function, keep in mind that Ruby has no concept of &#39;pass by value&#39;. Variables are always a reference to an object. <a href="http://stackoverflow.com/a/430958/863846">Difference between pass by value and pass by reference.</a></p>
+<h4>Tests</h4>
+<p>Replace the tests from the previous step with the tests below, and modify your code until these new tests pass.</p>
+<pre><code class="lang-ruby">describe &#39;atm&#39; do
+  [
+    [-1, false],
+    [0, false],
+    [7, false],
+    [53, false],
+    [35, [20, 10, 5]],
+    [40, [20, 20]],
+    [65, [20, 20, 20, 5]],
+    [70, [20, 20, 20, 10]],
+    [75, [20, 20, 20, 10, 5]],
+  ].each do |input, expected|
+    it &quot;should return #{expected} when $#{input} is withdrawn&quot; do
+      withdraw(input).must_equal expected
+    end
+  end
+end</code></pre>
+<h3>Discussion Points</h3>
+<ul>
+<li>How many lines did you have to change, going from step 3 to 4?</li>
+<li>Refactor your code so that you could change to $100, $20 and $10 notes by changing a single line.</li>
+<li>What is the most future-proof solution?</li>
+</ul>
+<h2>Step 5a - Advanced</h2>
+<p>Let&#39;s tackle the tricker case we mentioned, where each note isn&#39;t necessarily a multiple of the next lowest note. For this step, we&#39;ll assume we have only $50 and $20 notes available - but we&#39;ll be mixing it up more later, so try to keep your code future-proof!</p>
+<p><strong>Hint:</strong> Before writing any code, consider withdrawing the following amounts: $60, $80, $110, $160 - what should it return? What process does it need to go through to arrive at that result? What will your existing code try to do? Consider writing a brief solution in pseudo-code, first.</p>
+<p>Note: This step could be solved with <a href="http://en.wikipedia.org/wiki/Recursion#Recursion_in_computer_science">recursion</a>. If you&#39;ve never used recursion, you may like to ask a mentor about it. <em>(Coaches: you might like to use fibonacci as an example. Touch on the problem of infinite nesting, and the need for an exit condition.)</em></p>
+<h4>Tests</h4>
+<p>Replace the tests from the previous step with the tests below, and modify your code until these new tests pass.</p>
+<pre><code class="lang-ruby">describe &#39;atm&#39; do
+  [
+    [-1, false],
+    [0, false],
+    [7, false],
+    [29, false],
+    [135, false],
+    [70, [50, 20]],
+    [80, [20, 20, 20, 20]],
+    [90, [50, 20, 20]],
+    [120, [50, 50, 20]],
+    [130, [50, 20, 20, 20, 20]],
+    [160, [50, 50, 20, 20, 20]],
+    [200, [50, 50, 50, 50]]
+  ].each do |amount, expected|
+    it &quot;should return #{expected} when $#{input} is withdrawn&quot; do
+      withdraw(amount).must_equal expected
+    end
+  end
+end</code></pre>
+<h2>Step 5b - Advanced</h2>
+<ul>
+<li>Read, but don&#39;t do, step 6. If you&#39;re step 5 code is great, it should only take a few seconds to complete step 6. Can you see why?</li>
+<li>Refactor your step 5 code, to make it as future-ready as possible for step 6.</li>
+</ul>
+<h2>Step 6 - Advanced</h2>
+<p>Imagine you&#39;re now able to pass in a second parameter (an array), specifying the denominations of (Australian) notes available for that withdrawal. Assume people prefer to get the highest possible denomination of note.</p>
+<h4>Examples</h4>
+<p><code>withdraw(220, [50, 20, 5])</code> says to withdraw $220, with only $50, $20 and $5 notes available.</p>
+<p><code>withdraw(65, [50, 20, 5])</code> should return <code>[50, 5, 5, 5]</code> rather than <code>[20, 20, 20, 5]</code>, because $50 is highest.</p>
+<p><em>(If you&#39;ve re-factored your step 5 code well enough, this step should only take a few seconds!)</em></p>
+<h4>Tests</h4>
+<p>Replace the tests from the previous step with the tests below, and modify your code until these new tests pass.</p>
+<pre><code class="lang-ruby">describe &#39;atm&#39; do
+  [
+    [-1, [20, 10], false],
+    [0, [100, 50, 20], false],
+    [50, [100, 20], false],
+    [120, [50, 10, 5], [50, 50, 10, 10]],
+    [65, [50, 20, 10, 5], [50, 10, 5]],
+    [80, [50, 20, 5], [50, 20, 5, 5]],
+    [130, [100, 50, 20, 10, 5], [100, 20, 10]],
+    [160, [50, 20], [50, 50, 20, 20, 20]],
+  ].each do |amount, denoms, expected|
+    it &quot;should convert the number #{amount} with #{denoms} to #{expected}&quot; do
+      withdraw(amount, denoms).must_equal expected
+    end
+  end
+end</code></pre>
+<h3>Discussion Points</h3>
+<ul>
+<li>Given a particular solution <em>works</em>, what makes it &#39;good&#39; or &#39;bad&#39; code?</li>
+<li>Can you think of any take-home best practices or principals? Is code structure important? Why?</li>
+<li>Did you have any &#39;Aha!&#39; moments? What were they?</li>
+<li>Lets say you started a little ATM company, which quickly expanded to become a global success. How suitable is your code for dealing with all denominations of currency, in all nations of the world? Did it get more suitable with each step?</li>
+</ul>
+<h2>Final Git</h2>
+<p> Don't forget to <a href="/rails-girls-next/git#fork">fork</a> the repo when you're done!</p>
