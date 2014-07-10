@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rails Girls Next</title>
+
+    <link rel="stylesheet" href="/rails-girls-next/stylesheets/styles.css">
+    <link rel="stylesheet" href="/rails-girls-next/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rails Girls Next</h1>
+        <p>February 19, 2014</p>
+        <a href="/rails-girls-next/"><img src="/rails-girls-next/images/rails-girls-heart.png" class="logo"/></a>
+
+        <h3>Exercises</h3>
+
+        <ul>
+          <li><a href="/rails-girls-next/git-exercise">Git exercise</a></li>
+          <li><a href="/rails-girls-next/tdd">Test Driven Development</a></li>
+          <li><a href="/rails-girls-next/ruby">Coding with Ruby</a></li>
+          <li><a href="http://tjmcewan.github.io/coffeecalc/docs/tutorial.ruby.html">Fun with Sinatra</a></li>
+        </ul>
+
+        <h3>Tips and Tricks</h3>
+
+        <ul>
+          <li><a href="/rails-girls-next/git">Git</a></li>
+          <li><a href="http://lucybain.com/resources/setting-up-sublime-autosave/">Sublime autosave</a></li>
+        </ul>
+      </header>
+      <section>
+<h1> Working with Git </h1>
+<p><em>Created by Lucy Bain, <a href="https://twitter.com/lucykbain">@lucykbain</a></em></p>
+<p> Nowadays Git is part of most developer's work flows. It's a handy tool, and a great one to learn more about. This evening we're going to learn more about Git on it's own, without a full Ruby on Rails project to clutter things up. Instead, we'll write a story.</p>
+<p> Some of you may have played this game before. Someone starts a story and writes just one line, then the next person continues the story by adding another line, the next person contributes another line, and so on. Eventually you're left with a story (of sorts) that everyone has contributed to. We're going to play that game, but we'll use Git!</p>
+<h2> Step 0: Clone the repo</h2>
+<p> Make sure you have a GitHub account. If you've done Rails Girls before, you should have one already, but this is the time to find your username and password.</p>
+<p>I made a <a href="https://github.com/lbain/RGN-july-2014">repository</a> for this story, you'll need to clone it and open it in your editor (I'll be using Sublime).</p>
+<h2> Step 1: The demo</h2>
+<p>I'll go through a demo with another leader so you can see all the steps involved. Here's a quick review:</p>
+<ol>
+  <li> Pull down the latest version of the code <code>git pull origin master</code> </li>
+  <li> Make your change (open <code>story.txt</code> and add a line)</li>
+  <li> Stage your change with <code>git add story.txt</code></li>
+  <li> Commit your change using <code>git commit -m "your commit message here"</code></li>
+  <li> Push your change to GitHub <code>git push origin master</code></li>
+</ol>
+<h2>Step 2: Make your contribution</h2>
+<p> We'll go around the group so everyone gets a turn. When it's your turn, follow the steps above to add your line to the story. Feel free to be silly and don't worry about typos, we'll fix them later!</p>
+
+<h2> Step 3: Checkout a branch</h2>
+<p>There's been some creative differences between myself and another mentor, we want to take the story in different directions. We'll create new branches each and assign you to work on a particular branch.</p>
+<p>You need to checkout the branch you're working on with <code>git checkout BRANCH-NAME</code></p>
+
+<h2> Step 4: Make another contribution</h2>
+<p> Just as we did before, everyone will contribute to the story line one at a time. The commands remain the same, but instead of <code>pull</code>ing and <code>push</code>ing to <code>master</code> you will use your <code>BRANCH-NAME</code> instead.</p>
+
+<h2> Step 5: Make a pull request</h2>
+<p>At this point, there have probably been a few mistakes, or some plot twists that didn't quite make sense. We'll tidy those up now. But we don't want to go around changing other people's work without asking them. So we'll make a pull request to let them know.</p>
+<p> Your mentor will demo how to make a pull request, then it will be your turn.</p>
+<p> The main command you'll use is <code>git checkout -b BRANCH-NAME</code>.</p>
+
+<h2>Step 6: Merge a pull request</h2>
+<p>Once everyone has made pull requests, you need to go back and comment on two pull requests that aren't yours. Then head back to your pull request to see what people said about yours, and decide if your pull request should be merged in or closed and left out.</p>
+
+<h2> Step 6: Fix a merge error</h2>
+<p> Sometimes you might make changes and forget to run a <code>git pull</code> first, or someone else might <code>git push</code> changes while you're making changes of your own. This can cause merge conflicts. Here's how we'll simulate this:</p>
+<ol>
+  <li> Persons 1 and 2 will <code>git pull</code>, make a change to the story, and then <code>git commit</code></li>
+  <li> Person 1 will <code>git push</code> </li>
+  <li> Person 2 will try to <code>git push</code>, but should get rejected</li>
+  <li> Person 2 will <code>git pull</code>, resolve the merge conflict, and <code>git commit</code> </li>
+  <li> Person 2 will <code>git push</code>, successfully this time</li>
+  <li> The current person 2 will be person 1 to the next person in the group</li>
+</ol>
+<p>Go around the group and get everyone to be person 1 and person 2 so everyone has resolved a merge conflict.</p>
+
+<h2> Step 7: Enjoy! </h2>
+<p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lbain">Lucy</a>, <a href="https://github.com/puyo">Greg</a>, <a href="https://github.com/joshuapaling">Joss</a>, <a href="https://github.com/tjmcewan">Tim</a> and <a href="https://github.com/elle">Elle</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/rails-girls-next/javascripts/scale.fix.js"></script>
+  </body>
+</html>
